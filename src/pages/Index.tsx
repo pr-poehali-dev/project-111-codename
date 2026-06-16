@@ -63,7 +63,7 @@ const Index = () => {
             style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(6px)' }}>
             <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" style={{ boxShadow: '0 0 6px #34d399' }} />
             <span className="font-body text-white" style={{ fontSize: '12px' }}>
-              Енотыча нашли <span className="font-bold text-amber-200">1 443</span> человека
+              Енотыча нашли <span className="font-bold text-amber-200">1 787</span> человек
             </span>
           </div>
 
