@@ -1,4 +1,4 @@
-const RACCOON = 'https://cdn.poehali.dev/projects/ccce36d2-15fb-48fb-b4fb-c42c690f9838/bucket/f3ed4a36-fe64-492c-9b07-27fb6b52e6c4.jpg';
+const RACCOON = 'https://cdn.poehali.dev/projects/ccce36d2-15fb-48fb-b4fb-c42c690f9838/bucket/45b42b61-7579-4daa-a3bf-885205546c60.jpg';
 const QR = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://tuapsenoty.ru&color=3a1f08&bgcolor=fffbf0&margin=10';
 
 const Index = () => {
@@ -91,54 +91,54 @@ const Index = () => {
           {/* НИЗ */}
           <div className="mt-auto w-full space-y-2">
 
-            {/* QR — крупный, в рамке */}
+            {/* QR — отдельный планшет */}
             <div className="rounded-2xl overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, #fffbf0 0%, #ffeaa0 100%)',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.35), 0 0 0 3px #C67A3E, 0 0 0 5px rgba(198,122,62,0.3)',
+                background: 'linear-gradient(160deg, #fffdf5 0%, #fff0c0 100%)',
+                boxShadow: '0 10px 40px rgba(0,0,0,0.4), 0 0 0 3px #C67A3E',
               }}>
-              {/* Подпись над QR */}
-              <div className="py-2 px-4" style={{ background: '#C67A3E' }}>
-                <p className="font-body font-bold text-white tracking-wide" style={{ fontSize: '14px', textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
-                  Наведи камеру
+              {/* Шапка планшета */}
+              <div className="flex items-center justify-center gap-2 py-2.5 px-4"
+                style={{ background: 'linear-gradient(90deg, #b8621e 0%, #C67A3E 100%)' }}>
+                <span style={{ fontSize: '16px' }}>📷</span>
+                <p className="font-body font-bold text-white tracking-wide" style={{ fontSize: '15px' }}>
+                  Наведи камеру на код
                 </p>
               </div>
-              <div className="flex items-center gap-3 px-3 py-3">
-                <div className="relative shrink-0">
-                  <img src={QR} alt="QR код tuapsenoty.ru" className="w-24 h-24 rounded-lg"
-                    style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }} />
+              {/* QR + текст */}
+              <div className="flex items-center gap-4 px-4 py-3">
+                <div className="shrink-0" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.15)', borderRadius: 12 }}>
+                  <img src={QR} alt="QR код tuapsenoty.ru" className="w-28 h-28 rounded-xl block" />
                 </div>
                 <div className="text-left flex-1">
-                  <p className="font-body font-bold text-[#3a1f08]" style={{ fontSize: '14px', lineHeight: 1.35 }}>
+                  <p className="font-body font-bold text-[#3a1f08]" style={{ fontSize: '14px', lineHeight: 1.4 }}>
                     Я покажу карту и расскажу о себе
                   </p>
-                  <p className="font-body text-[#7a5030] mt-1.5" style={{ fontSize: '11px', lineHeight: 1.5 }}>
+                  <p className="font-body text-[#8a6040] mt-2" style={{ fontSize: '11px', lineHeight: 1.55 }}>
                     Телефон сам всё поймёт — просто открой камеру и наведи
                   </p>
                 </div>
               </div>
-            </div>
-
-            {/* Ссылка — синяя, подчёркнутая */}
-            <div className="rounded-xl py-2 px-4 flex items-center justify-center gap-2"
-              style={{ background: 'rgba(255,255,255,0.13)', boxShadow: '0 2px 12px rgba(0,0,0,0.2)' }}>
-              <span style={{ fontSize: '15px' }}>🌐</span>
-              <a href="https://tuapsenoty.ru"
-                className="font-body font-semibold underline underline-offset-2"
-                style={{ color: '#93c5fd', fontSize: '16px', textShadow: '0 0 12px rgba(147,197,253,0.4)' }}>
-                tuapsenoty.ru
-              </a>
-            </div>
-
-            {/* Счётчик + хештег */}
-            <div className="flex items-center justify-between px-1">
-              <span className="font-body text-white/50" style={{ fontSize: '11px' }}>#туапсеноты</span>
-              <div className="flex items-center gap-1">
-                <span style={{ fontSize: '11px' }}>❤️</span>
-                <span className="font-body text-white/70" style={{ fontSize: '11px' }}>
-                  <span className="text-amber-200 font-bold">1 747</span> желаний загадано
-                </span>
+              {/* Ссылка внутри планшета */}
+              <div className="border-t px-4 py-2.5 flex items-center justify-center gap-1.5"
+                style={{ borderColor: 'rgba(198,122,62,0.25)', background: 'rgba(255,240,200,0.5)' }}>
+                <span style={{ fontSize: '14px' }}>🌐</span>
+                <a href="https://tuapsenoty.ru"
+                  className="font-body font-bold underline underline-offset-2"
+                  style={{ color: '#1d6fbe', fontSize: '18px', letterSpacing: '0.01em' }}>
+                  tuapsenoty.ru
+                </a>
               </div>
+            </div>
+
+            {/* Строка-подпись */}
+            <div className="flex items-center justify-center gap-2 px-1">
+              <span style={{ fontSize: '12px' }}>❤️</span>
+              <span className="font-body text-white/70" style={{ fontSize: '11.5px' }}>
+                <span className="text-amber-200 font-bold">1 747</span> желаний загадано
+              </span>
+              <span className="text-white/30" style={{ fontSize: '11px' }}>•</span>
+              <span className="font-body text-white/50" style={{ fontSize: '11.5px' }}>#туапсеноты</span>
             </div>
           </div>
         </div>
