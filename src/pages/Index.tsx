@@ -4,7 +4,8 @@ const QR = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https:
 const Index = () => {
   return (
     <div className="min-h-screen w-full bg-[#1a2b30] flex items-center justify-center p-4 sm:p-8 font-body">
-      <div className="relative w-full max-w-[440px] aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl">
+      <div className="relative w-full max-w-[440px] aspect-[9/16] rounded-[2.5rem] overflow-hidden"
+        style={{ boxShadow: '0 30px 80px rgba(0,0,0,0.6)' }}>
 
         {/* Фон */}
         <div className="absolute inset-0" style={{
@@ -21,7 +22,7 @@ const Index = () => {
         <div className="absolute top-10 right-8 opacity-35 select-none pointer-events-none">
           <svg width="64" height="32" viewBox="0 0 64 32" fill="none">
             <path d="M0 16 Q9 4 18 16 Q27 4 36 16" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none"/>
-            <path d="M34 24 Q41 14 48 24 Q55 14 62 24" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6"/>
+            <path d="M34 24 Q41 14 48 24 Q55 14 62 24" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.5"/>
           </svg>
         </div>
         <div className="absolute top-20 left-6 opacity-20 select-none pointer-events-none">
@@ -30,7 +31,7 @@ const Index = () => {
           </svg>
         </div>
 
-        {/* Волны внизу */}
+        {/* Волны */}
         <div className="absolute bottom-0 left-0 right-0 pointer-events-none select-none">
           <svg viewBox="0 0 440 110" xmlns="http://www.w3.org/2000/svg" className="w-full">
             <path d="M0 75 L40 75 L40 65 L65 65 L65 72 L95 72 L95 60 L115 60 L115 68 L155 68 L155 76 L185 76 L185 64 L205 64 L205 70 L245 70 L245 58 L265 58 L265 68 L305 68 L305 73 L345 73 L345 65 L375 65 L375 73 L410 73 L410 78 L440 78 L440 110 L0 110 Z"
@@ -44,86 +45,97 @@ const Index = () => {
 
         <div className="relative h-full flex flex-col items-center text-center px-6 pt-7 pb-5">
 
-          {/* ВЕРХ */}
+          {/* ВЕРХ: заголовок — шрифт Cormorant */}
           <div className="flex items-center justify-center gap-2">
             <span className="text-3xl leading-none">🦝</span>
-            <h1 className="font-display font-bold leading-none tracking-wide"
-              style={{ fontSize: 'clamp(2.8rem, 12vw, 3.6rem)', color: '#C67A3E', textShadow: '0 2px 18px rgba(0,0,0,0.4)' }}>
+            <h1 className="font-display font-bold leading-none"
+              style={{ fontSize: 'clamp(2.8rem, 12vw, 3.6rem)', color: '#C67A3E', textShadow: '0 3px 20px rgba(0,0,0,0.45)' }}>
               Туапсеноты
             </h1>
           </div>
-          <p className="mt-1.5 text-white/80 font-medium tracking-widest uppercase"
-            style={{ fontSize: '11px', letterSpacing: '0.15em' }}>
+          {/* подпись — шрифт Golos Text */}
+          <p className="mt-1.5 font-body text-white/75 tracking-widest uppercase"
+            style={{ fontSize: '10.5px', letterSpacing: '0.18em', textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}>
             Бронзовые еноты-хранители города
           </p>
 
-          {/* ЦЕНТР — енот */}
+          {/* ЦЕНТР: енот */}
           <div className="relative mt-3 w-56 sm:w-64 flex-shrink-0">
             <div className="absolute -inset-8 bg-amber-200/20 blur-3xl rounded-full" />
             <img
               src={RACCOON}
               alt="Енотыч"
-              className="relative w-full h-auto object-contain drop-shadow-2xl"
+              className="relative w-full h-auto object-contain"
+              style={{ filter: 'drop-shadow(0 12px 32px rgba(0,0,0,0.45))' }}
             />
           </div>
 
           {/* Призывы */}
           <div className="mt-2 w-full">
             <div className="rounded-2xl py-3 px-5"
-              style={{ background: 'rgba(10,30,40,0.5)', backdropFilter: 'blur(6px)' }}>
+              style={{
+                background: 'rgba(10,30,40,0.52)',
+                backdropFilter: 'blur(8px)',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+              }}>
               <p className="font-display italic text-white font-semibold leading-tight"
-                style={{ fontSize: 'clamp(1.25rem, 5.5vw, 1.5rem)', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
+                style={{ fontSize: 'clamp(1.2rem, 5.5vw, 1.45rem)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
                 Найди меня на набережной
               </p>
             </div>
-            <p className="mt-2 font-medium" style={{ color: '#f5d08a', fontSize: '15px' }}>
+            <p className="mt-2 font-body font-medium" style={{ color: '#f5d08a', fontSize: '14px', textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}>
               Потри лапку и загадай желание
             </p>
           </div>
 
           {/* НИЗ */}
-          <div className="mt-auto w-full space-y-2.5">
+          <div className="mt-auto w-full space-y-2">
 
-            {/* QR */}
-            <div className="relative rounded-2xl p-3 flex items-center gap-4"
+            {/* QR — крупный, в рамке */}
+            <div className="rounded-2xl overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, #fffbf0 0%, #ffe8a0 100%)',
-                boxShadow: '0 0 32px rgba(255,200,60,0.5), 0 6px 20px rgba(0,0,0,0.3)',
-                border: '2.5px solid rgba(210,160,40,0.8)'
+                background: 'linear-gradient(135deg, #fffbf0 0%, #ffeaa0 100%)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.35), 0 0 0 3px #C67A3E, 0 0 0 5px rgba(198,122,62,0.3)',
               }}>
-              <div className="relative shrink-0">
-                <div className="absolute -inset-1.5 rounded-xl bg-amber-300/40 blur-md" />
-                <img src={QR} alt="QR код" className="relative w-24 h-24 rounded-xl" />
-              </div>
-              <div className="text-left flex-1">
-                <p className="text-[#3a1f08] font-bold leading-snug" style={{ fontSize: '15px' }}>
+              {/* Подпись над QR */}
+              <div className="py-2 px-4" style={{ background: '#C67A3E' }}>
+                <p className="font-body font-bold text-white tracking-wide" style={{ fontSize: '14px', textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
                   Наведи камеру
                 </p>
-                <p className="text-[#3a1f08] font-bold leading-snug" style={{ fontSize: '15px' }}>
-                  я покажу карту
-                </p>
-                <p className="text-[#7a5030] mt-1.5 leading-relaxed" style={{ fontSize: '11px' }}>
-                  Телефон сам всё поймёт.
-                  Просто открой камеру и наведи.
-                </p>
+              </div>
+              <div className="flex items-center gap-3 px-3 py-3">
+                <div className="relative shrink-0">
+                  <img src={QR} alt="QR код tuapsenoty.ru" className="w-24 h-24 rounded-lg"
+                    style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }} />
+                </div>
+                <div className="text-left flex-1">
+                  <p className="font-body font-bold text-[#3a1f08]" style={{ fontSize: '14px', lineHeight: 1.35 }}>
+                    Я покажу карту и расскажу о себе
+                  </p>
+                  <p className="font-body text-[#7a5030] mt-1.5" style={{ fontSize: '11px', lineHeight: 1.5 }}>
+                    Телефон сам всё поймёт — просто открой камеру и наведи
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Ссылка */}
-            <div className="rounded-xl py-2.5 px-4 flex items-center justify-center gap-2"
-              style={{ background: 'rgba(255,255,255,0.12)' }}>
-              <span style={{ fontSize: '18px' }}>🌐</span>
-              <span className="font-bold tracking-wide" style={{ color: '#fde68a', fontSize: '17px' }}>
+            {/* Ссылка — синяя, подчёркнутая */}
+            <div className="rounded-xl py-2 px-4 flex items-center justify-center gap-2"
+              style={{ background: 'rgba(255,255,255,0.13)', boxShadow: '0 2px 12px rgba(0,0,0,0.2)' }}>
+              <span style={{ fontSize: '15px' }}>🌐</span>
+              <a href="https://tuapsenoty.ru"
+                className="font-body font-semibold underline underline-offset-2"
+                style={{ color: '#93c5fd', fontSize: '16px', textShadow: '0 0 12px rgba(147,197,253,0.4)' }}>
                 tuapsenoty.ru
-              </span>
+              </a>
             </div>
 
             {/* Счётчик + хештег */}
             <div className="flex items-center justify-between px-1">
-              <span className="text-white/55" style={{ fontSize: '11px' }}>#туапсеноты</span>
+              <span className="font-body text-white/50" style={{ fontSize: '11px' }}>#туапсеноты</span>
               <div className="flex items-center gap-1">
                 <span style={{ fontSize: '11px' }}>❤️</span>
-                <span className="text-white/75" style={{ fontSize: '11px' }}>
+                <span className="font-body text-white/70" style={{ fontSize: '11px' }}>
                   <span className="text-amber-200 font-bold">1 747</span> желаний загадано
                 </span>
               </div>
