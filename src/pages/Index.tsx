@@ -1,4 +1,4 @@
-const RACCOON = 'https://cdn.poehali.dev/projects/ccce36d2-15fb-48fb-b4fb-c42c690f9838/bucket/45b42b61-7579-4daa-a3bf-885205546c60.jpg';
+const RACCOON = 'https://cdn.poehali.dev/projects/ccce36d2-15fb-48fb-b4fb-c42c690f9838/bucket/f3ed4a36-fe64-492c-9b07-27fb6b52e6c4.jpg';
 const QR = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://tuapsenoty.ru&color=3a1f08&bgcolor=fffbf0&margin=10';
 
 const Index = () => {
@@ -43,9 +43,9 @@ const Index = () => {
           </svg>
         </div>
 
-        <div className="relative h-full flex flex-col items-center text-center px-6 pt-7 pb-5">
+        <div className="relative h-full flex flex-col items-center text-center px-6 pt-6 pb-4">
 
-          {/* ВЕРХ: заголовок — шрифт Cormorant */}
+          {/* ВЕРХ */}
           <div className="flex items-center justify-center gap-2">
             <span className="text-3xl leading-none">🦝</span>
             <h1 className="font-display font-bold leading-none"
@@ -53,92 +53,90 @@ const Index = () => {
               Туапсеноты
             </h1>
           </div>
-          {/* подпись — шрифт Golos Text */}
-          <p className="mt-1.5 font-body text-white/75 tracking-widest uppercase"
-            style={{ fontSize: '10.5px', letterSpacing: '0.18em', textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}>
+          <p className="mt-1 font-body text-white/75 tracking-widest uppercase"
+            style={{ fontSize: '10px', letterSpacing: '0.18em' }}>
             Бронзовые еноты-хранители города
           </p>
 
-          {/* ЦЕНТР: енот */}
-          <div className="relative mt-3 w-56 sm:w-64 flex-shrink-0">
+          {/* ЦЕНТР: мама с дочкой */}
+          <div className="relative mt-2 w-52 sm:w-60 flex-shrink-0">
             <div className="absolute -inset-8 bg-amber-200/20 blur-3xl rounded-full" />
             <img
               src={RACCOON}
-              alt="Енотыч"
+              alt="Туапсеноты"
               className="relative w-full h-auto object-contain"
               style={{ filter: 'drop-shadow(0 12px 32px rgba(0,0,0,0.45))' }}
             />
           </div>
 
-          {/* Призывы */}
-          <div className="mt-2 w-full">
-            <div className="rounded-2xl py-3 px-5"
-              style={{
-                background: 'rgba(10,30,40,0.52)',
-                backdropFilter: 'blur(8px)',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-              }}>
+          {/* Эмоциональный текст */}
+          <div className="mt-2 w-full space-y-1.5">
+            <div className="rounded-2xl py-2.5 px-5"
+              style={{ background: 'rgba(10,30,40,0.52)', backdropFilter: 'blur(8px)', boxShadow: '0 4px 20px rgba(0,0,0,0.3)' }}>
               <p className="font-display italic text-white font-semibold leading-tight"
-                style={{ fontSize: 'clamp(1.2rem, 5.5vw, 1.45rem)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
-                Найди меня на набережной
+                style={{ fontSize: 'clamp(1.1rem, 5vw, 1.35rem)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+                Маленькие бронзовые чудеса,<br/>которые делают Туапсе теплее
               </p>
             </div>
-            <p className="mt-2 font-body font-medium" style={{ color: '#f5d08a', fontSize: '14px', textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}>
-              Потри лапку и загадай желание
+
+            <p className="font-body text-white/85" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>
+              Их можно найти, потрогать и загадать желание.<br/>
+              Каждый хранит свою легенду и ритуал удачи.
             </p>
+
+            <div className="rounded-xl py-2 px-4"
+              style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(4px)' }}>
+              <p className="font-body font-semibold" style={{ color: '#f5d08a', fontSize: '13px' }}>
+                ✨ Первый уже на набережной — Енотыч-рыбак ждёт тебя
+              </p>
+            </div>
           </div>
 
-          {/* НИЗ */}
+          {/* НИЗ: QR планшет */}
           <div className="mt-auto w-full space-y-2">
-
-            {/* QR — отдельный планшет */}
             <div className="rounded-2xl overflow-hidden"
               style={{
                 background: 'linear-gradient(160deg, #fffdf5 0%, #fff0c0 100%)',
                 boxShadow: '0 10px 40px rgba(0,0,0,0.4), 0 0 0 3px #C67A3E',
               }}>
-              {/* Шапка планшета */}
-              <div className="flex items-center justify-center gap-2 py-2.5 px-4"
+              <div className="flex items-center justify-center gap-2 py-2 px-4"
                 style={{ background: 'linear-gradient(90deg, #b8621e 0%, #C67A3E 100%)' }}>
-                <span style={{ fontSize: '16px' }}>📷</span>
-                <p className="font-body font-bold text-white tracking-wide" style={{ fontSize: '15px' }}>
+                <span style={{ fontSize: '15px' }}>📷</span>
+                <p className="font-body font-bold text-white" style={{ fontSize: '14px' }}>
                   Наведи камеру на код
                 </p>
               </div>
-              {/* QR + текст */}
-              <div className="flex items-center gap-4 px-4 py-3">
-                <div className="shrink-0" style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.15)', borderRadius: 12 }}>
-                  <img src={QR} alt="QR код tuapsenoty.ru" className="w-28 h-28 rounded-xl block" />
-                </div>
+              <div className="flex items-center gap-3 px-3 py-2.5">
+                <img src={QR} alt="QR код" className="w-24 h-24 rounded-xl block shrink-0"
+                  style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.15)' }} />
                 <div className="text-left flex-1">
-                  <p className="font-body font-bold text-[#3a1f08]" style={{ fontSize: '14px', lineHeight: 1.4 }}>
-                    Я покажу карту и расскажу о себе
+                  <p className="font-body font-bold text-[#3a1f08]" style={{ fontSize: '13px', lineHeight: 1.4 }}>
+                    Карта, легенды и квест — всё на сайте
                   </p>
-                  <p className="font-body text-[#8a6040] mt-2" style={{ fontSize: '11px', lineHeight: 1.55 }}>
+                  <p className="font-body text-[#8a6040] mt-1.5" style={{ fontSize: '10.5px', lineHeight: 1.5 }}>
                     Телефон сам всё поймёт — просто открой камеру и наведи
                   </p>
                 </div>
               </div>
-              {/* Ссылка внутри планшета */}
-              <div className="border-t px-4 py-2.5 flex items-center justify-center gap-1.5"
+              <div className="border-t px-4 py-2 flex items-center justify-center gap-1.5"
                 style={{ borderColor: 'rgba(198,122,62,0.25)', background: 'rgba(255,240,200,0.5)' }}>
-                <span style={{ fontSize: '14px' }}>🌐</span>
+                <span style={{ fontSize: '13px' }}>🌐</span>
                 <a href="https://tuapsenoty.ru"
                   className="font-body font-bold underline underline-offset-2"
-                  style={{ color: '#1d6fbe', fontSize: '18px', letterSpacing: '0.01em' }}>
+                  style={{ color: '#1d6fbe', fontSize: '17px' }}>
                   tuapsenoty.ru
                 </a>
               </div>
             </div>
 
             {/* Строка-подпись */}
-            <div className="flex items-center justify-center gap-2 px-1">
-              <span style={{ fontSize: '12px' }}>❤️</span>
-              <span className="font-body text-white/70" style={{ fontSize: '11.5px' }}>
+            <div className="flex items-center justify-center gap-2">
+              <span style={{ fontSize: '11px' }}>❤️</span>
+              <span className="font-body text-white/70" style={{ fontSize: '11px' }}>
                 <span className="text-amber-200 font-bold">1 747</span> желаний загадано
               </span>
-              <span className="text-white/30" style={{ fontSize: '11px' }}>•</span>
-              <span className="font-body text-white/50" style={{ fontSize: '11.5px' }}>#туапсеноты</span>
+              <span className="text-white/30">•</span>
+              <span className="font-body text-white/50" style={{ fontSize: '11px' }}>#туапсеноты</span>
             </div>
           </div>
         </div>
