@@ -32,11 +32,11 @@ const Index = () => {
 
           {/* Изображение енота */}
           <div className="mt-6 relative">
-            <div className="absolute inset-0 rounded-full bg-amber-200/30 blur-2xl scale-110" />
+            <div className="absolute inset-0 bg-amber-200/20 blur-3xl scale-110" />
             <img
               src={RACCOON}
               alt="Бронзовый енот Туапсеноты"
-              className="relative w-44 h-44 sm:w-52 sm:h-52 object-cover rounded-full border-4 border-white/60 shadow-xl"
+              className="relative w-52 sm:w-64 object-contain drop-shadow-2xl"
             />
           </div>
 
