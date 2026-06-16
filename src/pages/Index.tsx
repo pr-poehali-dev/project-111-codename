@@ -53,10 +53,19 @@ const Index = () => {
               Туапсеноты
             </h1>
           </div>
-          <p className="mt-1 font-body text-white/75 tracking-widest uppercase"
+          <p className="mt-1 font-body text-white tracking-widest uppercase"
             style={{ fontSize: '10px', letterSpacing: '0.18em' }}>
             Бронзовые еноты-хранители города
           </p>
+
+          {/* Счётчик «нашли» */}
+          <div className="mt-2 flex items-center gap-2 px-4 py-1.5 rounded-full"
+            style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(6px)' }}>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" style={{ boxShadow: '0 0 6px #34d399' }} />
+            <span className="font-body text-white" style={{ fontSize: '12px' }}>
+              Енотыча нашли <span className="font-bold text-amber-200">1 443</span> человека
+            </span>
+          </div>
 
           {/* ЦЕНТР: мама с дочкой */}
           <div className="relative mt-2 w-52 sm:w-60 flex-shrink-0">
@@ -79,7 +88,7 @@ const Index = () => {
               </p>
             </div>
 
-            <p className="font-body text-white/85" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>
+            <p className="font-body text-white" style={{ fontSize: '12.5px', lineHeight: 1.55 }}>
               Их можно найти, потрогать и загадать желание.<br/>
               Каждый хранит свою легенду и ритуал удачи.
             </p>
@@ -132,11 +141,11 @@ const Index = () => {
             {/* Строка-подпись */}
             <div className="flex items-center justify-center gap-2">
               <span style={{ fontSize: '11px' }}>❤️</span>
-              <span className="font-body text-white/70" style={{ fontSize: '11px' }}>
+              <span className="font-body text-white/90" style={{ fontSize: '11px' }}>
                 <span className="text-amber-200 font-bold">1 747</span> желаний загадано
               </span>
-              <span className="text-white/30">•</span>
-              <span className="font-body text-white/50" style={{ fontSize: '11px' }}>#туапсеноты</span>
+              <span className="text-white/50">•</span>
+              <span className="font-body text-white/80" style={{ fontSize: '11px' }}>#туапсеноты</span>
             </div>
           </div>
         </div>
