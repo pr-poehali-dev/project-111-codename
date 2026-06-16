@@ -51,36 +51,40 @@ const Index = () => {
 
           {/* QR-блок */}
           <div className="mt-auto w-full">
-            <div className="flex items-center justify-center gap-4 bg-white/15 backdrop-blur-md rounded-2xl px-4 py-4 border border-white/20">
-              <div className="text-right flex-1">
-                <p className="text-white font-medium text-[15px] leading-tight">
-                  Наведи камеру
-                </p>
-                <p className="text-amber-100 text-[13px]">и я оживу!</p>
-              </div>
-              <div className="relative shrink-0">
-                {/* Пульсирующее свечение */}
-                <div className="absolute -inset-2 rounded-xl bg-amber-300/60 blur-md animate-pulse" />
-                <div className="absolute -inset-1 rounded-xl border-2 border-amber-300/80" />
+
+            {/* Стрелка над QR */}
+            <p className="text-white font-semibold text-[15px] mb-2 animate-bounce">
+              ⬇ Наведи камеру сюда ⬇
+            </p>
+
+            {/* Планшет с QR */}
+            <div className="relative rounded-2xl p-4 flex flex-col items-center"
+              style={{ background: 'linear-gradient(135deg, #fff8e8 0%, #ffefc2 100%)', boxShadow: '0 0 30px rgba(255,200,80,0.5), 0 4px 20px rgba(0,0,0,0.3)' }}>
+              <div className="absolute -inset-[2px] rounded-2xl border-2 border-amber-400/80" />
+
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-xl bg-amber-300/40 blur-lg animate-pulse" />
                 <img
                   src={QR}
                   alt="QR-код tuapsenoty.ru"
-                  className="relative w-20 h-20 rounded-lg bg-[#fdf6ec] p-1 shadow-xl"
+                  className="relative w-32 h-32 rounded-lg"
                 />
               </div>
+
+              <p className="mt-3 text-[#4a2c12] font-semibold text-[13px]">
+                Телефон сам всё поймёт
+              </p>
+              <p className="text-[#7a5030] text-[11px] mt-0.5">
+                Просто открой камеру и наведи
+              </p>
             </div>
 
-            <div className="mt-4 flex flex-col items-center gap-1">
-              <p className="text-[13px] text-white/85">
-                Перейди на сайт — смотри карту
-              </p>
-              <div className="flex items-center gap-3 mt-1">
-                <span className="text-white font-medium text-sm">#туапсеноты</span>
-                <span className="w-1 h-1 rounded-full bg-white/50" />
-                <span className="text-amber-100 font-semibold text-sm tracking-wide">
-                  tuapsenoty.ru
-                </span>
-              </div>
+            <div className="mt-3 flex items-center justify-center gap-3">
+              <span className="text-white/80 font-medium text-sm">#туапсеноты</span>
+              <span className="w-1 h-1 rounded-full bg-white/40" />
+              <span className="text-amber-100 font-semibold text-sm tracking-wide">
+                tuapsenoty.ru
+              </span>
             </div>
           </div>
         </div>
