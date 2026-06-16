@@ -34,8 +34,7 @@ const Index = () => {
             <img
               src={RACCOON}
               alt="Бронзовый енот Туапсеноты"
-              className="relative w-full h-auto object-contain"
-              style={{ mixBlendMode: 'multiply' }}
+              className="relative w-full h-auto object-contain drop-shadow-2xl"
             />
           </div>
 
