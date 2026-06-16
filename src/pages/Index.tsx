@@ -58,11 +58,16 @@ const Index = () => {
                 </p>
                 <p className="text-amber-100 text-[13px]">и я оживу!</p>
               </div>
-              <img
-                src={QR}
-                alt="QR-код tuapsenoty.ru"
-                className="w-20 h-20 rounded-lg bg-[#fdf6ec] p-1 shadow-md shrink-0"
-              />
+              <div className="relative shrink-0">
+                {/* Пульсирующее свечение */}
+                <div className="absolute -inset-2 rounded-xl bg-amber-300/60 blur-md animate-pulse" />
+                <div className="absolute -inset-1 rounded-xl border-2 border-amber-300/80" />
+                <img
+                  src={QR}
+                  alt="QR-код tuapsenoty.ru"
+                  className="relative w-20 h-20 rounded-lg bg-[#fdf6ec] p-1 shadow-xl"
+                />
+              </div>
             </div>
 
             <div className="mt-4 flex flex-col items-center gap-1">
