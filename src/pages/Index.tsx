@@ -7,53 +7,56 @@ const Index = () => {
   return (
     <div className="min-h-screen w-full bg-[#1a2b30] flex items-center justify-center p-4 sm:p-8 font-body">
       <div className="relative w-full max-w-[440px] aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10">
-
-        {/* Фото на весь баннер */}
-        <img
-          src={RACCOON}
-          alt="Туапсеноты"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+        {/* Градиентный фон */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(160deg, #2a6b78 0%, #3d7a82 22%, #9a8a6a 50%, #d9803f 78%, #e08a3c 100%)',
+          }}
         />
-
-        {/* Тёмный градиент сверху */}
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(30,60,70,0.82) 0%, rgba(30,60,70,0.3) 35%, rgba(0,0,0,0) 55%, rgba(20,40,30,0.75) 80%, rgba(15,35,25,0.95) 100%)'
-        }} />
 
         <div className="relative h-full flex flex-col items-center text-center px-7 pt-10 pb-8">
           {/* Заголовок */}
           <div className="flex items-center gap-2">
             <span className="text-2xl">🦝</span>
-            <h1 className="font-display text-4xl sm:text-5xl font-semibold tracking-wide text-white drop-shadow-lg">
+            <h1 className="font-display text-4xl sm:text-5xl font-semibold tracking-wide text-white drop-shadow-md">
               Туапсеноты
             </h1>
           </div>
-          <p className="mt-1.5 text-[13px] text-white/90 tracking-wide drop-shadow">
+          <p className="mt-1.5 text-[13px] text-white/85 tracking-wide">
             Бронзовые еноты-хранители города
           </p>
 
-          {/* Пространство для фото (середина свободна) */}
-          <div className="flex-1" />
+          {/* Изображение — квадрат с мягкой тенью, без обрезки */}
+          <div className="mt-6 relative w-52 sm:w-64">
+            <div className="absolute -inset-4 bg-amber-200/20 blur-2xl rounded-full" />
+            <img
+              src={RACCOON}
+              alt="Бронзовый енот Туапсеноты"
+              className="relative w-full h-auto object-contain drop-shadow-2xl"
+            />
+          </div>
 
           {/* Призывы */}
-          <div className="space-y-2.5 mb-6">
-            <p className="font-display italic text-2xl text-white drop-shadow-lg">
+          <div className="mt-4 space-y-2.5">
+            <p className="font-display italic text-2xl text-white drop-shadow-sm">
               Найди меня на набережной
             </p>
-            <p className="flex items-center justify-center gap-2 text-[15px] text-white/95 drop-shadow">
-              <Icon name="Sparkles" size={16} className="text-amber-200" />
+            <p className="flex items-center justify-center gap-2 text-[15px] text-white/90">
+              <Icon name="Sparkles" size={16} className="text-amber-100" />
               Потри лапку — загадай желание
             </p>
           </div>
 
           {/* QR-блок */}
-          <div className="w-full">
-            <div className="flex items-center justify-center gap-4 bg-black/30 backdrop-blur-md rounded-2xl px-4 py-4 border border-white/20">
+          <div className="mt-auto w-full">
+            <div className="flex items-center justify-center gap-4 bg-white/15 backdrop-blur-md rounded-2xl px-4 py-4 border border-white/20">
               <div className="text-right flex-1">
                 <p className="text-white font-medium text-[15px] leading-tight">
                   Наведи камеру
                 </p>
-                <p className="text-amber-200 text-[13px]">и я оживу!</p>
+                <p className="text-amber-100 text-[13px]">и я оживу!</p>
               </div>
               <img
                 src={QR}
@@ -63,13 +66,13 @@ const Index = () => {
             </div>
 
             <div className="mt-4 flex flex-col items-center gap-1">
-              <p className="text-[13px] text-white/85 drop-shadow">
+              <p className="text-[13px] text-white/85">
                 Перейди на сайт — смотри карту
               </p>
               <div className="flex items-center gap-3 mt-1">
                 <span className="text-white font-medium text-sm">#туапсеноты</span>
                 <span className="w-1 h-1 rounded-full bg-white/50" />
-                <span className="text-amber-200 font-semibold text-sm tracking-wide">
+                <span className="text-amber-100 font-semibold text-sm tracking-wide">
                   tuapsenoty.ru
                 </span>
               </div>
