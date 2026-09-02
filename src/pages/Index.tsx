@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import Icon from '@/components/ui/icon';
+
 const RACCOON = 'https://cdn.poehali.dev/projects/ccce36d2-15fb-48fb-b4fb-c42c690f9838/bucket/f3ed4a36-fe64-492c-9b07-27fb6b52e6c4.jpg';
 const QR = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://tuapsenoty.ru&color=3a1f08&bgcolor=fffbf0&margin=10';
 
@@ -131,6 +134,15 @@ const Index = () => {
               <span className="text-white/50">•</span>
               <span className="font-body text-white/80" style={{ fontSize: '11px' }}>#туапсеноты</span>
             </div>
+
+            <Link to="/map"
+              className="flex items-center justify-center gap-1.5 py-2 rounded-full"
+              style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(6px)' }}>
+              <Icon name="MapPin" size={14} color="#f5d08a" />
+              <span className="font-body font-semibold text-white" style={{ fontSize: '12px' }}>
+                Смотреть карту
+              </span>
+            </Link>
           </div>
         </div>
       </div>
