@@ -2,9 +2,6 @@ import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import MAP_IMG from '@/assets/tuapse-map.png';
 
-const ENOTYCH_PHOTO = 'https://cdn.poehali.dev/projects/ccce36d2-15fb-48fb-b4fb-c42c690f9838/bucket/724f77ad-c334-4c05-91f4-132241599926.jfif';
-const ENIRA_PHOTO = 'https://cdn.poehali.dev/projects/ccce36d2-15fb-48fb-b4fb-c42c690f9838/bucket/8bf60fe1-5987-40db-92cf-fc7e91ecb32f.jfif';
-
 const MapPage = () => {
   return (
     <div className="min-h-screen w-full bg-[#1a2b30] flex items-center justify-center p-4 sm:p-8 font-body">
@@ -48,40 +45,7 @@ const MapPage = () => {
           {/* Карта */}
           <div className="mt-4 w-full rounded-2xl overflow-hidden relative"
             style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.4), 0 0 0 3px #C67A3E' }}>
-            <img src={MAP_IMG} alt="Карта Туапсе с метками" className="w-full h-auto block" />
-          </div>
-
-          {/* Карточки мест */}
-          <div className="mt-4 w-full space-y-3">
-            <div className="rounded-2xl overflow-hidden flex items-center gap-3 p-2.5 text-left"
-              style={{ background: 'linear-gradient(160deg, #fffdf5 0%, #fff0c0 100%)', boxShadow: '0 6px 20px rgba(0,0,0,0.3)' }}>
-              <img src={ENOTYCH_PHOTO} alt="Енотыч-рыбак" className="rounded-xl object-cover shrink-0"
-                style={{ width: '64px', height: '64px', boxShadow: '0 3px 10px rgba(0,0,0,0.2)' }} />
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full shrink-0" style={{ background: '#e14b4b', boxShadow: '0 0 5px #e14b4b' }} />
-                  <p className="font-body font-bold text-[#3a1f08]" style={{ fontSize: '13px' }}>Енотыч-рыбак</p>
-                </div>
-                <p className="font-body text-[#8a6040] mt-0.5" style={{ fontSize: '10.5px', lineHeight: 1.4 }}>
-                  Морской бульвар, у причала №9
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl overflow-hidden flex items-center gap-3 p-2.5 text-left"
-              style={{ background: 'linear-gradient(160deg, #fffdf5 0%, #fff0c0 100%)', boxShadow: '0 6px 20px rgba(0,0,0,0.3)' }}>
-              <img src={ENIRA_PHOTO} alt="Енира с малышом" className="rounded-xl object-cover shrink-0"
-                style={{ width: '64px', height: '64px', boxShadow: '0 3px 10px rgba(0,0,0,0.2)' }} />
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full shrink-0" style={{ background: '#4caf6a', boxShadow: '0 0 5px #4caf6a' }} />
-                  <p className="font-body font-bold text-[#3a1f08]" style={{ fontSize: '13px' }}>Енира с малышом</p>
-                </div>
-                <p className="font-body text-[#8a6040] mt-0.5" style={{ fontSize: '10.5px', lineHeight: 1.4 }}>
-                  Городской парк
-                </p>
-              </div>
-            </div>
+            <img src={MAP_IMG} alt="Карта Туапсе с фото Енотыча и Ениры на местах установки" className="w-full h-auto block" />
           </div>
 
           <p className="mt-4 font-body text-white/80" style={{ fontSize: '11px' }}>
